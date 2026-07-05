@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esta Rosa es para Tí</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="glass">
+            <div class="shine"></div>
+        </div>
+        <div class="thorns">
+            <div></div><div></div><div></div><div></div>
+        </div>
+        <div class="leaves">
+            <div></div><div></div><div></div><div></div>
+        </div>
+        <div class="petals">
+            <div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        </div>
+        <div class="deadPetals">
+            <div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+    
+    <div id="lyrics-container"></div>
+
+    <button class="music-btn" id="playBtn" onclick="toggleMusic()">
+        🎵 Reproducir Música
+    </button>
+
+    <audio id="localAudio" src="flowers.mp3" autoplay></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at center, #1b2745 0%, #050914 100%);
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 3px #ff69b4, 0 0 30px #ff1493;
+    animation: floatSparkle 4s infinite ease-in-out;
+    z-index: 100;
+}
+
+@keyframes floatSparkle {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    50% { opacity: 1; transform: translateY(-80px) scale(1.5); }
+    100% { transform: translateY(-160px) scale(0.5); opacity: 0; }
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.glass {
+  height: 350px;
+  width: 200px;
+  background: rgba(18, 33, 57, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
+  border-radius: 300px 300px 0px 0px;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(0, 0, 0, 0.8);
+}
+.glass:before {
+  content: "";
+  height: 15px;
+  width: 15px;
+  transform-origin: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  position: absolute;
+  left: 92px;
+  top: -20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.glass:after {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 250px;
+  background: #a52a2a;
+  top: 100%;
+  left: -13%;
+}
+
+.shine {
+  width: 12px;
+  height: 140px;
+  background: white;
+  opacity: 0.2;
+  position: absolute;
+  left: 85%;
+  top: 80px;
+  border-radius: 100px;
+  z-index: 10;
+}
+.shine:before {
+  content: "";
+  width: 12px;
+  height: 20px;
+  position: absolute;
+  background: white;
+  top: 160px;
+  border-radius: 100px;
+}
+
+.petals > div {
+  position: absolute;
+  background: linear-gradient(135deg, #f52c68, #b81b43);
+  width: 45px;
+  height: 80px;
+  top: 55px;
+  transition: all 0.5s ease-out;
+}
+.petals > div:nth-child(1) {
+  border-radius: 15px;
+  box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.9);
+  left: 80px;
+  top: 60px;
+  background: radial-gradient(circle, #ff4d88, #d52d58);
+}
+.petals > div:nth-child(2), .petals > div:nth-child(4), .petals > div:nth-child(6) {
+  background: linear-gradient(135deg, #d52d58, #8a1331);
+  left: 60px;
+  border-radius: 0px 30px 0px 30px;
+  transform-origin: bottom right;
+}
+.petals > div:nth-child(3), .petals > div:nth-child(5), .petals > div:nth-child(7) {
+  background: linear-gradient(135deg, #d52d58, #8a1331);
+  left: 100px;
+  border-radius: 30px 0px 30px 0px;
+  transform-origin: bottom left;
+}
+.petals > div:nth-child(2) {
+  z-index: 5;
+  top: 75px;
+  height: 70px;
+  box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+  animation: bloom2 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.petals > div:nth-child(3) {
+  z-index: 4;
+  top: 75px;
+  height: 70px;
+  box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+  animation: bloom3 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+.petals > div:nth-child(4) {
+  z-index: 3;
+  top: 70px;
+  height: 75px;
+  box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+  animation: bloom4 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+.petals > div:nth-child(5) {
+  z-index: 2;
+  top: 70px;
+  height: 75px;
+  box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+  animation: bloom5 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+.petals > div:nth-child(6) {
+  z-index: 1;
+  top: 65px;
+  height: 70px;
+  box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
+  animation: bloom6 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+.petals > div:nth-child(7) {
+  z-index: 0;
+  top: 65px;
+  height: 70px;
+  box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
+  animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+
+.deadPetals > div {
+  position: absolute;
+  background: #d52d58;
+  width: 20px;
+  height: 15px;
+  top: 120px;
+  border-radius: 0px 30px 0px 30px;
+  box-shadow: 0px 0px 30px rgba(245, 148, 184, 0.5);
+  transition: all 0.5s ease-out;
+}
+.deadPetals > div:nth-child(1) {
+  left: 67px;
+  transform: rotate(-30deg);
+  animation: falling 20s 4s ease-in-out infinite;
+}
+.deadPetals > div:nth-child(2) {
+  left: 104px;
+  transform: rotate(-30deg);
+  animation: falling 20s 8s ease-in-out infinite;
+}
+.deadPetals > div:nth-child(3) {
+  left: 91px;
+  transform: rotate(-30deg);
+  animation: falling 20s 12s ease-in-out infinite;
+}
+.deadPetals > div:nth-child(4) {
+  left: 69px;
+  transform: rotate(-30deg);
+  animation: falling 20s 16s ease-in-out infinite;
+}
+
+.leaves > div:nth-last-child(1) {
+  position: absolute;
+  width: 55px;
+  height: 30px;
+  background: #338f37;
+  top: 120px;
+  left: 75px;
+  border-radius: 100px;
+}
+.leaves > div:nth-child(1) {
+  position: absolute;
+  width: 6px;
+  height: 210px;
+  background: #054c05;
+  top: 95px;
+  left: 100px;
+  border-radius: 0 0 100px 100px;
+}
+.leaves > div:nth-child(2) {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  top: 53px;
+  border-radius: 5px 40px 20px 40px;
+  background: #054c05;
+  transform-origin: bottom;
+  transform: rotate(-30deg);
+  top: 180px;
+  left: 80px;
+  box-shadow: inset 5px 5px #066406;
+}
+.leaves > div:nth-child(3) {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  top: 53px;
+  border-radius: 40px 5px 40px 20px;
+  background: #054c05;
+  transform-origin: bottom;
+  transform: rotate(30deg);
+  top: 150px;
+  left: 95px;
+  box-shadow: inset -5px 5px #066406;
+}
+
+.thorns > div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 140px;
+}
+.thorns > div:nth-child(odd) {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #054c05;
+  left: 105px;
+}
+.thorns > div:nth-child(even) {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #054c05;
+  left: 95px;
+}
+.thorns > div:nth-child(1) {
+  top: 200px;
+}
+.thorns > div:nth-child(2) {
+  top: 170px;
+}
+.thorns > div:nth-child(4) {
+  top: 230px;
+}
+
+@keyframes bloom2 {
+  50% { transform: rotate(-90deg); top: 200px; left: 100px; }
+  100% { transform: rotate(-60deg); top: 252px; left: 50px; background: #71122a; box-shadow: 0px 0px 0px rgba(245, 148, 184, 0); }
+}
+@keyframes bloom3 { 100% { transform: rotate(45deg); } }
+@keyframes bloom4 { 100% { transform: rotate(-20deg); } }
+@keyframes bloom5 { 100% { transform: rotate(20deg); } }
+@keyframes bloom6 { 100% { transform: rotate(-5deg); } }
+@keyframes bloom7 { 100% { transform: rotate(5deg); } }
+@keyframes glowing {
+  50% { filter: drop-shadow(0px 0px 25px rgba(255, 105, 180, 0.8)) brightness(1.2); }
+}
+@keyframes falling {
+  20% { top: 335px; background: #9d193b; box-shadow: 0px 0px 0px rgba(245, 148, 184, 0); }
+  100% { top: 335px; opacity: 0; }
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 50px;
+    background: rgb(255, 0, 183);
+    backdrop-filter: blur(10px);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+    transition: .35s;
+    z-index: 9999;
+}
+
+.music-btn:hover {
+    transform: scale(1.08);
+    background: rgb(242, 0, 255);
+    box-shadow: 0 0 35px rgba(255, 0, 187, 0.259);
+}
+.music-btn:active {
+    transform: scale(.95);
+}
+
+#lyrics-container {
+    position: absolute;
+    top: 10%;
+    width: 90%;
+    text-align: center;
+    color: #ffd6eb;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+    text-shadow: 0 0 15px rgba(255, 0, 187, 1), 0 0 30px rgba(255, 0, 187, 0.8), 0 0 45px rgba(255, 105, 180, 0.6);
+    z-index: 999;
+    letter-spacing: 3px;
+    min-height: 40px;
+}
